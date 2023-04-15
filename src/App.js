@@ -1,17 +1,16 @@
 import React from "react";
 import "./App.css";
-import Home from './pages/Home'
+import HomePage from "./pages/HomePage";
+import { Routes, Route } from "react-router-dom";
+import SearchPage from "./pages/SearchPage";
 
 const App = () => {
   return (
-    <div className="app">
-      <h1>Google Clone</h1>
-
-      { /* Home (the one with the search on */}
-      <Home />
-
-      {/* SearchPage (the results page */}
-
+    <div className="App">
+      <Routes>
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/" element={<HomePage />} />
+      </Routes>
     </div>
   );
 };
