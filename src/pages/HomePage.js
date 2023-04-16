@@ -1,11 +1,13 @@
-import React from 'react'
-import './Home.css';
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./HomePage.css";
+import { Link } from "react-router-dom";
 import AppsIcon from "@mui/icons-material/Apps";
-import { Avatar } from '@mui/material';
-import GoogleLogo from '../images/google.png';
+import { Avatar } from "@mui/material";
+// import { ReactComponent as GoogleLogo } from "../images/google.svg";
+import GoogleLogo from "../images/google.png"
+import Search from "../components/SearchBar";
 
-const HomePage = () => {
+const Home = () => {
   return (
     <div className="home">
       <div className="homeHeader">
@@ -17,15 +19,21 @@ const HomePage = () => {
           <Link to="/gmail">Gmail</Link>
           <Link to="/images">Images</Link>
           <AppsIcon />
-          <Avatar />
+          <Avatar style={{ width: "32px", height: "32px" }} />
         </div>
       </div>
 
       <div className="homeBody">
-        <img src={GoogleLogo} alt="Google Logo" />
+        <div className="googleLogo">
+          {/* <GoogleLogo style={{ width: "275px", height: "275px"}} /> */}
+          <img src={GoogleLogo} style={{width: "275px"}} />
+        </div>
+        <div>
+          <Search />
+        </div>
       </div>
     </div>
   );
-}
+};
 
-export default HomePage;
+export default Home;
