@@ -5,8 +5,12 @@ import MicIcon from "@mui/icons-material/Mic";
 import { Button } from '@mui/material';
 import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
 import { useNavigate } from 'react-router-dom'
+import { useStateValue } from '../StateProvider';
+import { actionTypes } from '../reducer';
 
 const SearchBar = ({ hideButtons = false}) => {
+const [{}, dispatch] = useStateValue();
+
   const [input, setInput] = useState('')
   const navigate = useNavigate();
 
@@ -15,8 +19,12 @@ const SearchBar = ({ hideButtons = false}) => {
 
     console.log('You hit the search button >>', input)
 
-    //do something with the input ...come back and fix
+    dispatch({
+      type: actionTypes.SET_SEARCH_TERM,
+      term: input
+    })
 
+    //do something with the input ...come back and fix
     navigate('/search_page')
 
   };

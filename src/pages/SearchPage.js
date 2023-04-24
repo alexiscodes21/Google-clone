@@ -1,7 +1,19 @@
 import React from "react";
+import "./SearchPage.css";
+import { useStateValue } from '../StateProvider';
 
 const SearchPage = () => {
-  return <div>This is the SearchPage</div>;
+
+  const [{ term }, dispatch] = useStateValue();
+  return (
+    <div className="searchPage">
+      <div className="searchPageHeader">
+        <h1>{term}</h1>
+      </div>
+
+      <div className="searchPageResults"></div>
+    </div>
+  );
 };
 
 export default SearchPage;
