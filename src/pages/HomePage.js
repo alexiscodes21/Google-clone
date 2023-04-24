@@ -5,7 +5,7 @@ import AppsIcon from "@mui/icons-material/Apps";
 import { Avatar } from "@mui/material";
 // import { ReactComponent as GoogleLogo } from "../images/google.svg";
 import GoogleLogo from "../images/google.png"
-import Search from "../components/SearchBar";
+import SearchBar from "../components/SearchBar";
 
 const Home = () => {
   return (
@@ -29,7 +29,7 @@ const Home = () => {
           <img src={GoogleLogo} style={{width: "275px"}} />
         </div>
         <div>
-          <Search />
+          <SearchBar hideButtons />
         </div>
       </div>
     </div>

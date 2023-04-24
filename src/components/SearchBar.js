@@ -6,7 +6,7 @@ import { Button } from '@mui/material';
 import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
 import { useNavigate } from 'react-router-dom'
 
-const Search = () => {
+const SearchBar = ({ hideButtons = false}) => {
   const [input, setInput] = useState('')
   const navigate = useNavigate();
 
@@ -29,14 +29,26 @@ const Search = () => {
         <MicIcon />
         <CameraAltOutlinedIcon />
       </div>
-      <div className="searchButtons">
-        <Button type='submit' onClick={search} variant="outlined">
-          Google Search
-        </Button>
-        <Button variant="outlined">I'm Feeling Lucky</Button>
-      </div>
+
+      {!hideButtons ? (
+        <div className="searchButtons">
+          <Button type="submit" onClick={search} variant="outlined">
+            Google Search
+          </Button>
+          <Button variant="outlined">I'm Feeling Lucky</Button>
+        </div>
+      ) : (
+        <div className="searchButtons">
+          <Button className="searchButtons_hidden" type="submit" onClick={search} variant="outlined">
+            Google Search
+          </Button>
+          <Button className="searchButtons_hidden" variant="outlined">
+            I'm Feeling Lucky
+          </Button>
+        </div>
+      )}
     </form>
   );
 }
 
-export default Search;
+export default SearchBar;
