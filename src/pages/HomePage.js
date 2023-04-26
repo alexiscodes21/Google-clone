@@ -26,10 +26,10 @@ const Home = () => {
       <div className="homeBody">
         <div className="googleLogo">
           {/* <GoogleLogo style={{ width: "275px", height: "275px"}} /> */}
-          <img src={GoogleLogo} style={{width: "275px"}} />
+          <img src={GoogleLogo} alt={'Google Logo'} style={{width: "275px"}} />
         </div>
         <div>
-          <SearchBar hideButtons />
+          <SearchBar />
         </div>
       </div>
     </div>
