@@ -1,28 +1,71 @@
-.searchPageLogo {
-    object-fit: contain;
-    padding-top: 10px;
-    /*padding-left: 5px;*/
-}
-
 .searchPageHeader {
-    display: flex;
+    display: block;
     position: sticky;
     top: 0;
     background-color: white;
     z-index: 100;
     align-items: flex-start;
-    padding: 15px 0 20px 20px;
+    padding: 15px 0 18px 20px;
     border-bottom: 2px solid lightgray;
 }
 
-.searchPageHeaderBody {
-    margin-left: 40px;
-    width: 60vw;
+.searchPageLogoAndBar {
+    display: flex;
 }
 
-.searchPageHeaderBody > .search > .searchInput {
+.searchPageLogo {
+    object-fit: contain;
+    padding-top: 10px;
+}
+
+.searchPageSearchBar {
+    margin-left: 30px;
+    width: 55vw;
+}
+
+.searchPageSearchBar > .search > .searchInput {
     margin-top: 0;
     width: unset;
     margin: unset;
     max-width: unset;
+}
+
+.searchPageHeaderOptions {
+    display: flex;
+    align-items: left;
+    /* margin-left: 107px; */
+}
+
+@media screen and (min-width: 1000px) {
+    .searchPageHeaderOptions {
+        margin-left: 107px;
+    }
+}
+
+@media screen and (max-width: 999px) {
+    .searchPageHeaderOptions {
+        margin-left: 0px;
+    }
+}
+
+.icon {
+    color: rgb(86, 119, 187);
+}
+
+.option {
+    display: flex;
+    border: 1px solid lightgray;
+    border-radius: 36px;
+    width: auto;
+    margin: 0 3px;
+    padding: 3px 10px;
+}
+
+.option a {
+    text-decoration: none;
+    color: black;
+}
+
+.option:hover {
+    color: gray;
 }
