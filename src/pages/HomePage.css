@@ -7,6 +7,7 @@
 .homeHeader {
   display: flex;
   justify-content: space-between;
+  margin: 10px;
   padding: 0 5px 0 15px;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
@@ -42,4 +43,63 @@
   align-items: center;
 }
 
+.homeFooter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 10px;
+}
 
+@media screen and (max-width: 1200px) {
+  .homeFooter {
+    justify-content: space-evenly;
+  }
+}
+
+.homeFooter a {
+  margin-right: 14px;
+  text-decoration: inherit;
+  color: rgb(81, 77, 77);
+  font-size: 13px;
+}
+
+.homeFooter a:hover {
+  text-decoration: underline;
+}
+
+.Footer {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(128, 128, 128, 0.151);
+  height: 85px;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 1200px) {
+  .Footer {
+    height: 45px;
+  }
+}
+
+.FooterLeft {
+  justify-content: flex-start;
+  min-width: 30%;
+  order: 1;
+}
+
+.FooterMiddle {
+  order: 2;
+}
+
+@media screen and (max-width: 1200px) {
+  .FooterMiddle {
+    order: 0;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.FooterRight {
+  justify-content: flex-end;
+  min-width: 30%;
+  order: 3;
+}
