@@ -2,7 +2,7 @@ import React from "react";
 import "./SearchPage.css";
 import { useStateValue } from "../StateProvider";
 import useGoogleSearch from "../useGoogleSearch";
-import Response from "../response";
+// import Response from "../response";
 import GoogleLogo from "../images/google.png";
 import { Link } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
@@ -14,14 +14,16 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import FlightIcon from "@mui/icons-material/Flight";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import '../index.css'
 
 const SearchPage = () => {
   const [{ term }, dispatch] = useStateValue();
 
   // LIVE API CALL
-  // const { data } = useGoogleSearch(term)
+  const { data } = useGoogleSearch(term)
 
-  const data = Response;
+  // MOCK API CALL
+  // const data = Response;
 
   // https://developers.google.com/custom-search/v1/using_rest
 
@@ -75,7 +77,27 @@ const SearchPage = () => {
           </div>
         </div>
       </div>
-      <div className="searchPageResults"></div>
+      {term && (
+        <div className="searchPageTotalResults">
+          <p className="searchPageResultsCount">
+            About {data?.searchInformation.formattedTotalResults} results ({data?.searchInformation.formattedSearchTime} seconds) for {term}
+          </p>
+
+          {data?.items.map(item => (
+            <div className="searchPageResult">
+              <a href={item.link}>{item.pagemap?.cse_image?.length > 0 && item.pagemap?.cse_image[0]?.src && (
+                <img className="searchPageResultImage" src={item.pagemap?.cse_image?.length > 0 && item.pagemap?.cse_image[0]?.src} alt="" />
+              )}
+              
+              {item.displayLink}</a>
+              <a className="searchPageResultTitle" href={item.link}>
+                <h2>{item.title}</h2>
+              </a>
+              <p className="searchPageResultSnippet">{item.snippet}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </>
   );
 };
