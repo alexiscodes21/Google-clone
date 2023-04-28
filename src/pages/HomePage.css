@@ -48,6 +48,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @media screen and (max-width: 1200px) {
@@ -74,6 +75,12 @@
   padding: 0 20px;
 }
 
+@media screen and (max-width: 600px) {
+  .Footer {
+    height: 120px;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .Footer {
     height: 45px;
@@ -84,6 +91,14 @@
   justify-content: flex-start;
   min-width: 30%;
   order: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .FooterLeft {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .FooterMiddle {
