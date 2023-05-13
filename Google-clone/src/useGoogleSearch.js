@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
-import API_KEY from "./keys";
+//require("dotenv").config();
 
-const CONTEXT_KEY = "f6e7440b9534046ba";
+const API_KEY = process.env.REACT_APP_API_KEY;
+const CX = process.env.REACT_APP_CX;
 
 const useGoogleSearch = (term) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      fetch(`https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CONTEXT_KEY}&q=${term}`)
+      fetch(`https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CX}&q=${term}`)
         .then((response) => response.json())
         .then((result) => {
           setData(result);
