@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+//require("dotenv").config();
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const CX = process.env.REACT_APP_CX;
