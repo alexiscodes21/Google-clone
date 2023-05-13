@@ -14,13 +14,13 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import FlightIcon from "@mui/icons-material/Flight";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import '../index.css'
+import "../index.css";
 
 const SearchPage = () => {
   const [{ term }, dispatch] = useStateValue();
 
   // LIVE API CALL
-  const { data } = useGoogleSearch(term)
+  const { data } = useGoogleSearch(term);
 
   // MOCK API CALL
   // const data = Response;
@@ -83,13 +83,15 @@ const SearchPage = () => {
             About {data?.searchInformation.formattedTotalResults} results ({data?.searchInformation.formattedSearchTime} seconds) for {term}
           </p>
 
-          {data?.items.map(item => (
+          {data?.items.map((item) => (
             <div className="searchPageResult">
-              <a href={item.link}>{item.pagemap?.cse_image?.length > 0 && item.pagemap?.cse_image[0]?.src && (
-                <img className="searchPageResultImage" src={item.pagemap?.cse_image?.length > 0 && item.pagemap?.cse_image[0]?.src} alt="" />
-              )}
-              
-              {item.displayLink}</a>
+              <a href={item.link}>
+                {item.pagemap?.cse_image?.length > 0 && item.pagemap?.cse_image[0]?.src && (
+                  <img className="searchPageResultImage" src={item.pagemap?.cse_image?.length > 0 && item.pagemap?.cse_image[0]?.src} alt="" />
+                )}
+
+                {item.displayLink}
+              </a>
               <a className="searchPageResultTitle" href={item.link}>
                 <h2>{item.title}</h2>
               </a>
