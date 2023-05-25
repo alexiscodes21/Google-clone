@@ -12,11 +12,11 @@ const Home = () => {
     <div className="home">
       <div className="homeHeader">
         <div className="homeHeaderLeft">
-          <Link to="https://about.google.com">About</Link>
-          <Link to="https://store.google.com">Store</Link>
+          <Link to="/">About</Link>
+          <Link to="/">Store</Link>
         </div>
         <div className="homeHeaderRight">
-          <Link to="https://mail.google.com">Gmail</Link>
+          <Link to="/">Gmail</Link>
           {/*update images link...need to create a new page*/}
           <Link to="/">Images</Link>
           {/*update apps icon*/}
@@ -37,16 +37,16 @@ const Home = () => {
 
       <div className="homeFooter Footer">
         <div className="homeFooter FooterLeft">
-          <Link to="https://ads.google.com">Advertising</Link>
-          <Link to="https://smallbusiness.withgoogle.com">Business</Link>
-          <Link to="https://www.google.com/search/howsearchworks/">How Search works</Link>
+          <Link to="/">Advertising</Link>
+          <Link to="/">Business</Link>
+          <Link to="/">How Search works</Link>
         </div>
         <div className="homeFooter FooterMiddle">
-          <Link to="https://sustainability.google/carbon-free/">Carbon neutral since 2007</Link>
+          <Link to="/">Carbon neutral since 2007</Link>
         </div>
         <div className="homeFooter FooterRight">
-          <Link to="https://policies.google.com/privacy">Privacy</Link>
-          <Link to="https://policies.google.com/terms">Terms</Link>
+          <Link to="/">Privacy</Link>
+          <Link to="/">Terms</Link>
           {/*update settings link*/}
           <Link to="/">Settings</Link>
         </div>
